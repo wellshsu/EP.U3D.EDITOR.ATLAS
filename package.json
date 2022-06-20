@@ -2,7 +2,7 @@
   "name": "ep.u3d.editor.atlas",
   "displayName": "EP.U3D.EDITOR.ATLAS",
   "description": "Atlas editor.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "unity": "2019.2",
   "unityRelease": "0a12",
   "relatedPackages": {},
@@ -19,8 +19,6 @@
   },
   "type": "tool",
   "dependencies": {
-    "ep.u3d.library.base": "0.0.1",
-    "ep.u3d.editor.base": "0.0.2",
     "com.unity.2d.sprite": "1.0.0"
   }
 }
