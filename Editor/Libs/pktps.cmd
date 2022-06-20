@@ -1,0 +1,1 @@
+TexturePacker %1 --sheet %1.png --data %1.tpsheet %2 %3 %4 %5 %6 %7 %8 %9

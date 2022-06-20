@@ -1,0 +1,20 @@
+{
+    "name": "EP.U3D.EDITOR.ATLAS",
+    "rootNamespace": "",
+    "references": [
+        "EP.U3D.EDITOR.BASE",
+        "EP.U3D.LIBRARY.BASE",
+        "Unity.2D.Sprite.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
