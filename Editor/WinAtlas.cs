@@ -59,8 +59,10 @@ namespace EP.U3D.EDITOR.ATLAS
             var clazzSettingsDatabase = typeof(TexturePackerImporter.SettingsDatabase);
             var fieldDatabaseFilePath = clazzSettingsDatabase.GetField("databaseFilePath", BindingFlags.NonPublic | BindingFlags.Static);
             var fieldAssetFilePath = clazzSettingsDatabase.GetField("assetFilePath", BindingFlags.NonPublic | BindingFlags.Static);
-            fieldDatabaseFilePath.SetValue(null, pkg.resolvedPath + "/Editor/Libs/SettingsTexturePackerImporter.txt");
+            string importerTxt = pkg.resolvedPath + "/Editor/Libs/SettingsTexturePackerImporter.txt";
+            fieldDatabaseFilePath.SetValue(null, importerTxt);
             fieldAssetFilePath.SetValue(null, pkg.resolvedPath + "/Editor/Libs/SettingsTexturePackerImporter.asset");
+            if (Helper.HasFile(importerTxt) == false) Helper.SaveText(importerTxt, "version: 2");
         }
 
         private void OnEnable()
