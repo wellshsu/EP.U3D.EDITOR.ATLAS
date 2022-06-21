@@ -59,9 +59,9 @@ namespace EP.U3D.EDITOR.ATLAS
             var clazzSettingsDatabase = typeof(TexturePackerImporter.SettingsDatabase);
             var fieldDatabaseFilePath = clazzSettingsDatabase.GetField("databaseFilePath", BindingFlags.NonPublic | BindingFlags.Static);
             var fieldAssetFilePath = clazzSettingsDatabase.GetField("assetFilePath", BindingFlags.NonPublic | BindingFlags.Static);
-            string importerTxt = pkg.resolvedPath + "/Editor/Libs/SettingsTexturePackerImporter.txt";
+            string importerTxt = pkg.resolvedPath + "/Editor/Libs/Importer/DB~/SettingsTexturePackerImporter.txt";
             fieldDatabaseFilePath.SetValue(null, importerTxt);
-            fieldAssetFilePath.SetValue(null, pkg.resolvedPath + "/Editor/Libs/SettingsTexturePackerImporter.asset");
+            fieldAssetFilePath.SetValue(null, pkg.resolvedPath + "/Editor/Libs/Importer/SettingsTexturePackerImporter.asset");
             if (Helper.HasFile(importerTxt) == false) Helper.SaveText(importerTxt, "version: 2");
         }
 
@@ -290,7 +290,7 @@ namespace EP.U3D.EDITOR.ATLAS
                     if (Directory.Exists(rawPath))
                     {
                         Process cmd = new Process();
-                        cmd.StartInfo.FileName = pkg.resolvedPath + "/Editor/Libs/pktps.cmd";
+                        cmd.StartInfo.FileName = pkg.resolvedPath + "/Editor/Libs/Importer/pktps.cmd";
                         string argFile = rawPath + ".arg";
                         string arg = "--format unity-texture2d --force-publish --trim --disable-auto-alias --disable-rotation --force-squared";
                         if (File.Exists(argFile))
@@ -323,7 +323,7 @@ namespace EP.U3D.EDITOR.ATLAS
 
                             // 根据tpsheet重新合成图片（crack tp）
                             Process cmd2 = new Process();
-                            cmd2.StartInfo.FileName = pkg.resolvedPath + "/Editor/Libs/untps.exe";
+                            cmd2.StartInfo.FileName = pkg.resolvedPath + "/Editor/Libs/Importer/untps.exe";
                             cmd2.StartInfo.Arguments = string.Format("-s \"{0}\" -c \"{1}\"", rawPath, rawAtlasTpsheet);
                             cmd2.Start();
                             cmd2.WaitForExit();
